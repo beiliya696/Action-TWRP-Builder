@@ -122,6 +122,7 @@ jobs:
     - name: Clone device tree
       run: |
         git clone ${{ github.event.inputs.DEVICE_TREE_URL }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
+        wget https://github.com/dUwUb2004/Action-TWRP-Builder/releases/download/16881227038/kernel ./${{ github.event.inputs.DEVICE_PATH }}/prebuilt/
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
     - name: Clone common tree
